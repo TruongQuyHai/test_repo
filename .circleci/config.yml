@@ -2,6 +2,7 @@ version: 2.1
 
 orbs:
   node: circleci/node@5.0.2
+  coveralls: coveralls/coveralls@1.0.6
 
 jobs:
   test:
@@ -16,6 +17,7 @@ jobs:
       - run:
           command: yarn test:cov
           name: Run tests
+      - coveralls/upload
 
 workflows:
   test:
